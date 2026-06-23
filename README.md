@@ -3,7 +3,13 @@
 An industry-grade end-to-end retail analytics system using **MySQL** for data storage and **Python + Excel** for reporting.
 
 ---
+## 📸 Dashboard Preview
 
+### KPI Cards & Monthly Table
+![KPI Dashboard]("C:\Users\diwat\OneDrive\Pictures\Screenshots\Screenshot 2026-06-23 120310.png")
+
+### Monthly Revenue vs Profit Chart
+![Revenue Chart]("C:\Users\diwat\OneDrive\Pictures\dashboard_chart.png")
 ## 📁 File Guide
 
 | File | Description |
