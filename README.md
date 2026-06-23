@@ -6,7 +6,7 @@ An industry-grade end-to-end retail analytics system using **MySQL** for data st
 ## 📸 Dashboard Preview
 
 ### KPI Cards & Monthly Table
-![KPI Dashboard]("C:\Users\diwat\OneDrive\Pictures\Screenshots\Screenshot 2026-06-23 120310.png")
+![KPI Dashboard](""C:\Users\diwat\OneDrive\Pictures\dashboard_chart.png"")
 
 ### Monthly Revenue vs Profit Chart
 ![Revenue Chart]("C:\Users\diwat\OneDrive\Pictures\dashboard_chart.png")
