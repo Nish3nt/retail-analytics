@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)
 ![Excel](https://img.shields.io/badge/Excel-Dashboard-green?logo=microsoftexcel)
-![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?logo=powerbi)
+
 
 An industry-grade end-to-end retail analytics system with:
 - MySQL star-schema database (1250+ orders, 30 customers, 20 products)
@@ -34,7 +34,7 @@ Retail_Analytics/
 │   ├── 07_validate_data.py
 │   └── 08_scheduler.py
 ├── powerbi/
-│   └── POWERBI_SETUP.md
+│   └── 
 ├── reports/
 │   └── retail_analytics_dashboard.xlsx
 ├── logs/
@@ -62,5 +62,3 @@ Retail_Analytics/
 - Payment Method Distribution
 - Monthly Revenue, COGS & Gross Profit
 
-## ⚙️ How to Run
-See GUIDE.md for complete step-by-step instructions.
