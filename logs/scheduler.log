@@ -1,0 +1,135 @@
+2026-06-24 10:12:16  INFO  \U0001f4c5 Scheduler started — pipeline will run every Monday at 08:00
+2026-06-24 10:12:16  INFO     Press Ctrl+C to stop
+
+2026-06-24 10:12:16  INFO  \u25b6  Running pipeline now for first-time test …
+2026-06-24 10:12:16  INFO  =======================================================
+2026-06-24 10:12:16  INFO  \U0001f680 WEEKLY PIPELINE STARTED
+2026-06-24 10:12:16  INFO  =======================================================
+2026-06-24 10:12:16  INFO  \u25b6  Running: Data Validation …
+2026-06-24 10:12:17  ERROR     \u274c Data Validation — FAILED
+2026-06-24 10:12:17  ERROR        Traceback (most recent call last):
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 242, in <module>
+    issues = run_checks()
+             ^^^^^^^^^^^^
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 213, in run_checks
+    print(line)
+  File "C:\Users\diwat\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2026-06-24 10:12:17  INFO  \u25b6  Running: Excel Dashboard …
+2026-06-24 10:12:19  ERROR     \u274c Excel Dashboard — FAILED
+2026-06-24 10:12:19  ERROR        Traceback (most recent call last):
+  File "D:\Retail_Analytics\scripts\05_generate_excel.py", line 361, in <module>
+    main()
+  File "D:\Retail_Analytics\scripts\05_generate_excel.py", line 315, in main
+    print("\U0001f504 Fetching data from MySQL...")
+  File "C:\Users\diwat\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f504' in position 0: character maps to <undefined>
+2026-06-24 10:12:19  INFO  =======================================================
+2026-06-24 10:12:19  INFO  \u26a0\ufe0f  PIPELINE COMPLETE — Some steps failed, check logs
+2026-06-24 10:12:19  INFO  =======================================================
+2026-06-24 10:15:37  INFO  \U0001f4c5 Scheduler started — pipeline will run every Monday at 08:00
+2026-06-24 10:15:37  INFO     Press Ctrl+C to stop
+
+2026-06-24 10:15:37  INFO  \u25b6  Running pipeline now for first-time test …
+2026-06-24 10:15:37  INFO  =======================================================
+2026-06-24 10:15:37  INFO  \U0001f680 WEEKLY PIPELINE STARTED
+2026-06-24 10:15:37  INFO  =======================================================
+2026-06-24 10:15:37  INFO  \u25b6  Running: Data Validation …
+2026-06-24 10:15:38  ERROR     \u274c Data Validation — FAILED
+2026-06-24 10:15:38  ERROR        Traceback (most recent call last):
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 242, in <module>
+    issues = run_checks()
+             ^^^^^^^^^^^^
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 213, in run_checks
+    print(line)
+  File "C:\Users\diwat\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2026-06-24 10:15:38  INFO  \u25b6  Running: Excel Dashboard …
+2026-06-24 10:15:45  INFO     \u2705 Excel Dashboard — PASSED
+2026-06-24 10:15:45  ERROR     \U0001f4a5 Excel Dashboard — ERROR: 'NoneType' object has no attribute 'strip'
+2026-06-24 10:15:45  INFO  =======================================================
+2026-06-24 10:15:45  INFO  \u26a0\ufe0f  PIPELINE COMPLETE — Some steps failed, check logs
+2026-06-24 10:15:45  INFO  =======================================================
+2026-06-24 10:17:44  INFO  \U0001f4c5 Scheduler started — pipeline will run every Monday at 08:00
+2026-06-24 10:17:44  INFO     Press Ctrl+C to stop
+
+2026-06-24 10:17:44  INFO  \u25b6  Running pipeline now for first-time test …
+2026-06-24 10:17:44  INFO  =======================================================
+2026-06-24 10:17:44  INFO  \U0001f680 WEEKLY PIPELINE STARTED
+2026-06-24 10:17:44  INFO  =======================================================
+2026-06-24 10:17:44  INFO  \u25b6  Running: Data Validation …
+2026-06-24 10:17:45  ERROR     \u274c Data Validation — FAILED
+2026-06-24 10:17:45  ERROR        Traceback (most recent call last):
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 242, in <module>
+    issues = run_checks()
+             ^^^^^^^^^^^^
+  File "D:\Retail_Analytics\scripts\07_validate_data.py", line 213, in run_checks
+    print(line)
+  File "C:\Users\diwat\anaconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2026-06-24 10:17:45  INFO  \u25b6  Running: Excel Dashboard …
+2026-06-24 10:17:52  INFO     \u2705 Excel Dashboard — PASSED
+2026-06-24 10:17:52  ERROR     \U0001f4a5 Excel Dashboard — ERROR: 'NoneType' object has no attribute 'strip'
+2026-06-24 10:17:52  INFO  =======================================================
+2026-06-24 10:17:52  INFO  \u26a0\ufe0f  PIPELINE COMPLETE — Some steps failed, check logs
+2026-06-24 10:17:52  INFO  =======================================================
+2026-06-24 10:19:26  INFO   Scheduler started  pipeline will run every Monday at 08:00
+2026-06-24 10:19:26  INFO     Press Ctrl+C to stop
+
+2026-06-24 10:19:26  INFO    Running pipeline now for first-time test 
+2026-06-24 10:19:26  INFO  =======================================================
+2026-06-24 10:19:26  INFO   WEEKLY PIPELINE STARTED
+2026-06-24 10:19:26  INFO  =======================================================
+2026-06-24 10:19:26  INFO    Running: Data Validation 
+2026-06-24 10:19:27  INFO      Data Validation  PASSED
+2026-06-24 10:19:27  INFO        ============================================================
+2026-06-24 10:19:27  INFO          RETAIL ANALYTICS  DATA VALIDATION REPORT
+2026-06-24 10:19:27  INFO          Run at: 2026-06-24 10:19:27
+2026-06-24 10:19:27  INFO        ============================================================
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-01  NULL customer_id in orders    found: 0
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-02  NULL product_id in order items    found: 0
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-03  Orphan order items (no parent order)    found: 0
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-04  Orders with customer not in dim_customers    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-05  Negative unit prices in order items    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-06  Negative unit costs in order items    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-07  Negative line totals    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-08  Future order dates (beyond today)    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-09  Ship date before order date    found: 0
+2026-06-24 10:19:27  INFO         PASS  [MEDIUM  ]  CHK-10  Duplicate customer emails    found: 0
+2026-06-24 10:19:27  INFO         PASS  [HIGH    ]  CHK-11  Orders with zero line items    found: 0
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-12  Returns without matching order    found: 0
+2026-06-24 10:19:27  INFO         PASS  [MEDIUM  ]  CHK-13  Products with cost >= price (zero/negative margin)    found: 0
+2026-06-24 10:19:27  INFO         PASS  [CRITICAL]  CHK-14  Orders with NULL total_amount    found: 0
+2026-06-24 10:19:27  INFO         PASS  [MEDIUM  ]  CHK-15  Customers with NULL registration_date    found: 0
+2026-06-24 10:19:27  INFO        ============================================================
+2026-06-24 10:19:27  INFO          SUMMARY: 15 passed | 0 failed (0 CRITICAL)
+2026-06-24 10:19:27  INFO          Overall:  ALL CHECKS PASSED
+2026-06-24 10:19:27  INFO        ============================================================
+2026-06-24 10:19:27  INFO        
+2026-06-24 10:19:27  INFO         Report saved  logs\validation_report_2026-06-24_10-19.txt
+2026-06-24 10:19:27  INFO    Running: Excel Dashboard 
+2026-06-24 10:19:34  INFO      Excel Dashboard  PASSED
+2026-06-24 10:19:34  INFO        Fetching data from MySQL...
+2026-06-24 10:19:34  INFO         All queries complete.
+2026-06-24 10:19:34  INFO         Building Dashboard sheet...
+2026-06-24 10:19:34  INFO         Building Monthly Trends sheet...
+2026-06-24 10:19:34  INFO         Building Top Products sheet...
+2026-06-24 10:19:34  INFO         Building Regional Sales sheet...
+2026-06-24 10:19:34  INFO         Building Sales Reps sheet...
+2026-06-24 10:19:34  INFO         Building Category Analysis sheet...
+2026-06-24 10:19:34  INFO         Building CLV sheet...
+2026-06-24 10:19:34  INFO         Building Payment Methods sheet...
+2026-06-24 10:19:34  INFO         Building YoY Growth sheet...
+2026-06-24 10:19:34  INFO        
+2026-06-24 10:19:34  INFO         Dashboard saved  retail_analytics_dashboard.xlsx
+2026-06-24 10:19:34  INFO  =======================================================
+2026-06-24 10:19:34  INFO   PIPELINE COMPLETE  All steps passed
+2026-06-24 10:19:34  INFO  =======================================================

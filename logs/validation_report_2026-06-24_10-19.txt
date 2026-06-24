@@ -1,0 +1,21 @@
+RETAIL ANALYTICS  DATA VALIDATION REPORT
+Run at: 2026-06-24 10:19:27
+============================================================
+ PASS  [CRITICAL]  CHK-01  NULL customer_id in orders    found: 0
+ PASS  [CRITICAL]  CHK-02  NULL product_id in order items    found: 0
+ PASS  [CRITICAL]  CHK-03  Orphan order items (no parent order)    found: 0
+ PASS  [CRITICAL]  CHK-04  Orders with customer not in dim_customers    found: 0
+ PASS  [HIGH    ]  CHK-05  Negative unit prices in order items    found: 0
+ PASS  [HIGH    ]  CHK-06  Negative unit costs in order items    found: 0
+ PASS  [HIGH    ]  CHK-07  Negative line totals    found: 0
+ PASS  [HIGH    ]  CHK-08  Future order dates (beyond today)    found: 0
+ PASS  [HIGH    ]  CHK-09  Ship date before order date    found: 0
+ PASS  [MEDIUM  ]  CHK-10  Duplicate customer emails    found: 0
+ PASS  [HIGH    ]  CHK-11  Orders with zero line items    found: 0
+ PASS  [CRITICAL]  CHK-12  Returns without matching order    found: 0
+ PASS  [MEDIUM  ]  CHK-13  Products with cost >= price (zero/negative margin)    found: 0
+ PASS  [CRITICAL]  CHK-14  Orders with NULL total_amount    found: 0
+ PASS  [MEDIUM  ]  CHK-15  Customers with NULL registration_date    found: 0
+============================================================
+  SUMMARY: 15 passed | 0 failed (0 CRITICAL)
+  Overall:  ALL CHECKS PASSED

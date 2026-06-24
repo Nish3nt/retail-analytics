@@ -1,9 +1,10 @@
 """
-Retail Analytics — Excel Dashboard Generator
+Retail Analytics  Excel Dashboard Generator
 Connects to MySQL, runs all analytics queries, and produces a
 fully formatted Excel workbook with charts and KPI cards.
 """
-
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 import mysql.connector
 import pandas as pd
 from openpyxl import Workbook
@@ -18,7 +19,7 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
-# ── DB CONFIG ──────────────────────────────────────────────────────────────
+#  DB CONFIG 
 DB_CONFIG = {
     "host":     "localhost",
     "user":     "root",
@@ -26,7 +27,7 @@ DB_CONFIG = {
     "database": "retail_analytics"
 }
 
-# ── COLOUR PALETTE ─────────────────────────────────────────────────────────
+#  COLOUR PALETTE 
 DARK_BLUE   = "1F3864"
 MID_BLUE    = "2E75B6"
 LIGHT_BLUE  = "BDD7EE"
@@ -37,7 +38,7 @@ GREEN       = "70AD47"
 RED         = "FF0000"
 DARK_GREY   = "404040"
 
-# ── HELPERS ────────────────────────────────────────────────────────────────
+#  HELPERS 
 def connect():
     return mysql.connector.connect(**DB_CONFIG)
 
@@ -88,7 +89,7 @@ def write_df(ws, df, start_row=1, start_col=1, header_bg=MID_BLUE):
         max_len = max(df[col].astype(str).map(len).max(), len(col)) + 4
         ws.column_dimensions[get_column_letter(ci)].width = min(max_len, 30)
 
-# ── QUERIES ────────────────────────────────────────────────────────────────
+#  QUERIES 
 SQL = {
     "monthly": """
         SELECT DATE_FORMAT(o.order_date,'%Y-%m') AS month,
@@ -190,10 +191,10 @@ SQL = {
     """
 }
 
-# ── SHEET BUILDERS ─────────────────────────────────────────────────────────
+#  SHEET BUILDERS 
 
 def build_cover(wb, data):
-    ws = wb.create_sheet("📊 Dashboard")
+    ws = wb.create_sheet(" Dashboard")
     ws.sheet_view.showGridLines = False
     ws.column_dimensions["A"].width = 3
     for col in "BCDEFGHIJ":
@@ -202,7 +203,7 @@ def build_cover(wb, data):
     # Title banner
     ws.merge_cells("B1:J3")
     title_cell = ws["B1"]
-    title_cell.value = "🛒  RETAIL ANALYTICS DASHBOARD"
+    title_cell.value = "  RETAIL ANALYTICS DASHBOARD"
     title_cell.font = Font(name="Arial", bold=True, size=22, color=WHITE)
     title_cell.fill = PatternFill("solid", fgColor=DARK_BLUE)
     title_cell.alignment = Alignment(horizontal="center", vertical="center")
@@ -229,11 +230,11 @@ def build_cover(wb, data):
     top_region  = data["region"].iloc[0]["region_name"] if not data["region"].empty else "N/A"
 
     kpis = [
-        ("💰 Total Revenue",    f"₹{total_rev:,.0f}",    MID_BLUE),
-        ("📦 Total Orders",     f"{total_orders:,}",      "2E7D32"),
-        ("📈 Gross Profit",     f"₹{total_profit:,.0f}", "6A1B9A"),
-        ("🎯 Avg Margin",       f"{avg_margin}%",         "E65100"),
-        ("🏆 Top Region",       top_region,               DARK_BLUE),
+        (" Total Revenue",    f"{total_rev:,.0f}",    MID_BLUE),
+        (" Total Orders",     f"{total_orders:,}",      "2E7D32"),
+        (" Gross Profit",     f"{total_profit:,.0f}", "6A1B9A"),
+        (" Avg Margin",       f"{avg_margin}%",         "E65100"),
+        (" Top Region",       top_region,               DARK_BLUE),
     ]
     for i, (label, value, color) in enumerate(kpis, start=2):
         ws.merge_cells(start_row=6, start_column=i, end_row=6, end_column=i)
@@ -257,7 +258,7 @@ def build_cover(wb, data):
     chart.type = "col"
     chart.title = "Monthly Revenue vs Profit"
     chart.style = 10
-    chart.y_axis.title = "Amount (₹)"
+    chart.y_axis.title = "Amount ()"
     chart.x_axis.title = "Month"
     chart.shape = 4
     n = len(mini)
@@ -278,7 +279,7 @@ def build_sheet(wb, title, df, chart_type=None, chart_col=None, chart_val_col=No
 
     ws.merge_cells(f"B1:{get_column_letter(len(df.columns)+1)}1")
     hdr = ws["B1"]
-    hdr.value = title.replace("📦","").replace("🌍","").replace("👤","").replace("💳","").strip()
+    hdr.value = title.replace("","").replace("","").replace("","").replace("","").strip()
     hdr.font = Font(name="Arial", bold=True, size=14, color=WHITE)
     hdr.fill = PatternFill("solid", fgColor=DARK_BLUE)
     hdr.alignment = Alignment(horizontal="center", vertical="center")
@@ -310,52 +311,52 @@ def build_sheet(wb, title, df, chart_type=None, chart_col=None, chart_val_col=No
     return ws
 
 
-# ── MAIN ───────────────────────────────────────────────────────────────────
+#  MAIN 
 def main():
-    print("🔄 Fetching data from MySQL...")
+    print(" Fetching data from MySQL...")
     data = {k: run_query(v) for k, v in SQL.items()}
-    print("✅ All queries complete.")
+    print(" All queries complete.")
 
     wb = Workbook()
     wb.remove(wb.active)  # remove default sheet
 
-    print("📊 Building Dashboard sheet...")
+    print(" Building Dashboard sheet...")
     build_cover(wb, data)
 
-    print("📅 Building Monthly Trends sheet...")
-    build_sheet(wb, "📅 Monthly Trends", data["monthly"],
+    print(" Building Monthly Trends sheet...")
+    build_sheet(wb, " Monthly Trends", data["monthly"],
                 chart_type="bar", chart_col=0, chart_val_col=3)
 
-    print("📦 Building Top Products sheet...")
-    build_sheet(wb, "📦 Top Products", data["top_products"],
+    print(" Building Top Products sheet...")
+    build_sheet(wb, " Top Products", data["top_products"],
                 chart_type="bar", chart_col=0, chart_val_col=3)
 
-    print("🌍 Building Regional Sales sheet...")
-    build_sheet(wb, "🌍 Regional Sales", data["region"],
+    print(" Building Regional Sales sheet...")
+    build_sheet(wb, " Regional Sales", data["region"],
                 chart_type="bar", chart_col=0, chart_val_col=2)
 
-    print("👥 Building Sales Reps sheet...")
-    build_sheet(wb, "👥 Sales Reps", data["sales_rep"],
+    print(" Building Sales Reps sheet...")
+    build_sheet(wb, " Sales Reps", data["sales_rep"],
                 chart_type="bar", chart_col=0, chart_val_col=3)
 
-    print("🗂️ Building Category Analysis sheet...")
-    build_sheet(wb, "🗂️ Categories", data["category"],
+    print(" Building Category Analysis sheet...")
+    build_sheet(wb, " Categories", data["category"],
                 chart_type="bar", chart_col=1, chart_val_col=3)
 
-    print("👤 Building CLV sheet...")
-    build_sheet(wb, "👤 Customer CLV", data["clv"])
+    print(" Building CLV sheet...")
+    build_sheet(wb, " Customer CLV", data["clv"])
 
-    print("💳 Building Payment Methods sheet...")
-    build_sheet(wb, "💳 Payments", data["payment"],
+    print(" Building Payment Methods sheet...")
+    build_sheet(wb, " Payments", data["payment"],
                 chart_type="pie", chart_col=0, chart_val_col=1)
 
-    print("📈 Building YoY Growth sheet...")
-    build_sheet(wb, "📈 YoY Growth", data["yoy"],
+    print(" Building YoY Growth sheet...")
+    build_sheet(wb, " YoY Growth", data["yoy"],
                 chart_type="bar", chart_col=0, chart_val_col=1)
 
     out = "retail_analytics_dashboard.xlsx"
     wb.save(out)
-    print(f"\n✅ Dashboard saved → {out}")
+    print(f"\n Dashboard saved  {out}")
 
 if __name__ == "__main__":
     main()
